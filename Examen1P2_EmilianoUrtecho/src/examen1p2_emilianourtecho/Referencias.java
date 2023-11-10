@@ -22,7 +22,7 @@ public class Referencias extends Libros{
     
     @Override
     public String toString() {
-        return "Tipo: " + tipo;
+        return super.toString() + "Tipo: " + tipo;
     }
     
     

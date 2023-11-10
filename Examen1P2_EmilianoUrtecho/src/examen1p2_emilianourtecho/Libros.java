@@ -1,12 +1,14 @@
 
 package examen1p2_emilianourtecho;
 
+import java.util.ArrayList;
+
 public class Libros {
     private String titulo;
     private String autor;
     private double precio;
     private int edicion;
-
+    
     public Libros() {
     }
 
@@ -53,8 +55,8 @@ public class Libros {
     public String toString() {
         return "Titulo: " + titulo + "\n\n"
               +"Autor: " + autor + "\n\n"
-              +"Precio: " + precio + "\n\n"
-              +"Edicion: " + edicion;
+              +"Edicion: " + edicion + "\n\n"
+              +"Precio: " + precio;
     }
     
     
