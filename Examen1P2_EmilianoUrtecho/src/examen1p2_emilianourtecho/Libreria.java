@@ -310,6 +310,7 @@ public class Libreria extends javax.swing.JFrame {
         jLabel30.setText("Tipo:");
 
         cb_tipoLRef.setBackground(new java.awt.Color(204, 204, 204));
+        cb_tipoLRef.setForeground(new java.awt.Color(0, 0, 0));
 
         b_publicarLibro.setBackground(new java.awt.Color(204, 204, 204));
         b_publicarLibro.setForeground(new java.awt.Color(0, 0, 0));
@@ -354,6 +355,7 @@ public class Libreria extends javax.swing.JFrame {
         jLabel44.setText("Tipo:");
 
         cb_tipoLFiccion.setBackground(new java.awt.Color(204, 204, 204));
+        cb_tipoLFiccion.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -395,6 +397,7 @@ public class Libreria extends javax.swing.JFrame {
         jLabel45.setText("Tipo:");
 
         cb_tipoLNoFiccion.setBackground(new java.awt.Color(204, 204, 204));
+        cb_tipoLNoFiccion.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -441,6 +444,7 @@ public class Libreria extends javax.swing.JFrame {
         tf_autorP.setForeground(new java.awt.Color(0, 0, 0));
 
         ff_precioP.setBackground(new java.awt.Color(255, 255, 255));
+        ff_precioP.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
