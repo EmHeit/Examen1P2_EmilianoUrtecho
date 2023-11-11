@@ -20,6 +20,41 @@ public class Libreria extends javax.swing.JFrame {
                "Precio: " + libro.getPrecio() + "\n\n";
     }    
 
+    private Libros buscarLibroParaEditar(String tipo, String nombre) {
+        Referencias referencias = new Referencias();
+        for (Libros libros : libro) {
+            if ((tipo != null && referencias.getTipo().equals(tipo)) || 
+                (nombre != null && libros.getTitulo().equals(nombre))) {
+                return libros;
+            }
+        }
+        return null;
+    }    
+    
+    private String stringLibroE(Libros libros) {
+        Referencias referencia = new Referencias();
+        if (libro != null) {
+            return "Título: " + libros.getTitulo() + "\n" +
+                   "Autor: " + libros.getAutor() + "\n" +
+                   "Tipo: " + referencia.getTipo() + "\n" +
+                   "Edición: " + libros.getEdicion() + "\n" +
+                   "Precio: " + libros.getPrecio() + "\n\n";
+        } else {
+            return "Libro no encontrado.";
+        }
+    }
+    
+    private Libros buscarLibroParaEliminar(String tipo, String nombre) {
+        Referencias referencia = new Referencias();
+        for (Libros libros : libro) {
+            if ((tipo != null && referencia.getTipo().equals(tipo)) || 
+                (nombre != null && libros.getTitulo().equals(nombre))) {
+                return libros;
+            }
+        }
+        return null;
+    }    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -600,6 +635,11 @@ public class Libreria extends javax.swing.JFrame {
         b_editarLibro.setForeground(new java.awt.Color(0, 0, 0));
         b_editarLibro.setText("Editar Libros");
         b_editarLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_editarLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_editarLibroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_editarLibrosLayout = new javax.swing.GroupLayout(p_editarLibros);
         p_editarLibros.setLayout(p_editarLibrosLayout);
@@ -700,6 +740,11 @@ public class Libreria extends javax.swing.JFrame {
         b_eliminar.setForeground(new java.awt.Color(0, 0, 0));
         b_eliminar.setText("Eliminar Libros");
         b_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_eliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_eliminarLibrosLayout = new javax.swing.GroupLayout(p_eliminarLibros);
         p_eliminarLibros.setLayout(p_eliminarLibrosLayout);
@@ -1137,6 +1182,36 @@ public class Libreria extends javax.swing.JFrame {
         }
         ta_listarL.setText(resultado.toString());        
     }//GEN-LAST:event_cb_tipoListarActionPerformed
+
+    private void b_editarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_editarLibroActionPerformed
+        String tipoSeleccionado = (String) cb_tipoEditarLibros.getSelectedItem();
+        String nombreSeleccionado = (String) cb_libroEditarLibros.getSelectedItem();
+        Libros libroEditar = buscarLibroParaEditar(tipoSeleccionado, nombreSeleccionado);
+        ta_editarL.setText(stringLibroE(libroEditar));
+        tf_titulo.setEditable(true);
+        tf_autor.setEditable(true);
+        ff_precioEditar.setEditable(true);        
+    }//GEN-LAST:event_b_editarLibroActionPerformed
+
+    private void b_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_eliminarActionPerformed
+        String tipoSeleccionado = (String) cb_tipoEliminarLibros.getSelectedItem();
+        String nombreSeleccionado = (String) cb_libroEliminarLibros1.getSelectedItem();
+
+        Libros libroEliminar = buscarLibroParaEliminar(tipoSeleccionado, nombreSeleccionado);
+        ta_eliminarL.setText(stringLibro(libroEliminar));
+        int confirmacion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que deseas eliminar este libro?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            if (libroEliminar != null) {
+                libros.remove(libroEliminar);
+                JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente.", "Eliminación Exitosa", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Libro no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            ta_eliminarL.setText("");
+            cb_tipoEliminarLibros.setSelectedIndex(0);
+            cb_libroEliminarLibros1.setSelectedIndex(0);
+        }        
+    }//GEN-LAST:event_b_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
