@@ -1202,7 +1202,7 @@ public class Libreria extends javax.swing.JFrame {
         int confirmacion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que deseas eliminar este libro?", "Confirmar Eliminación", JOptionPane.YES_NO_OPTION);
         if (confirmacion == JOptionPane.YES_OPTION) {
             if (libroEliminar != null) {
-                libros.remove(libroEliminar);
+                libro.remove(libroEliminar);
                 JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente.", "Eliminación Exitosa", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "Libro no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
