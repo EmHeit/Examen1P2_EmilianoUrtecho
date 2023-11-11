@@ -24,6 +24,8 @@ public class Referencias extends Libros{
     public String toString() {
         return super.toString() + "Tipo: " + tipo;
     }
-    
-    
+
+    public void configurarDetallesReferencia(String tipo) {
+        this.tipo = tipo;
+    }    
 }

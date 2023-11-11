@@ -10,6 +10,15 @@ public class Libreria extends javax.swing.JFrame {
     public Libreria() {
         initComponents();
     }
+    public void publicarLibro(Libros libros) {
+        libro.add(libros);
+    }    
+    private String stringLibro(Libros libro) {
+        return "Título: " + libro.getTitulo() + "\n" +
+               "Autor: " + libro.getAutor() + "\n" +
+               "Edición: " + libro.getEdicion() + "\n" +
+               "Precio: " + libro.getPrecio() + "\n\n";
+    }    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,7 +83,7 @@ public class Libreria extends javax.swing.JFrame {
         tf_autor = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
         ff_precioEditar = new javax.swing.JFormattedTextField();
-        jButton3 = new javax.swing.JButton();
+        b_editarLibro = new javax.swing.JButton();
         p_eliminarLibros = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         cb_tipoEliminarLibros = new javax.swing.JComboBox<>();
@@ -196,7 +205,7 @@ public class Libreria extends javax.swing.JFrame {
                         .addGroup(p_adminLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tf_userAdministrador)
                             .addComponent(pf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(221, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_adminLogLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(p_adminLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +231,7 @@ public class Libreria extends javax.swing.JFrame {
                     .addComponent(pf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(b_logIn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(b_entrarUsuario)
                 .addContainerGap())
         );
@@ -249,6 +258,11 @@ public class Libreria extends javax.swing.JFrame {
         b_publicarLibro1.setForeground(new java.awt.Color(0, 0, 0));
         b_publicarLibro1.setText("Publicar Libro");
         b_publicarLibro1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_publicarLibro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_publicarLibro1ActionPerformed(evt);
+            }
+        });
 
         jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setText("Facultad:");
@@ -306,6 +320,11 @@ public class Libreria extends javax.swing.JFrame {
 
         cb_tipoLRef.setBackground(new java.awt.Color(204, 204, 204));
         cb_tipoLRef.setForeground(new java.awt.Color(0, 0, 0));
+        cb_tipoLRef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_tipoLRefActionPerformed(evt);
+            }
+        });
 
         b_publicarLibro.setBackground(new java.awt.Color(204, 204, 204));
         b_publicarLibro.setForeground(new java.awt.Color(0, 0, 0));
@@ -437,6 +456,11 @@ public class Libreria extends javax.swing.JFrame {
 
         tf_tituloP.setBackground(new java.awt.Color(255, 255, 255));
         tf_tituloP.setForeground(new java.awt.Color(0, 0, 0));
+        tf_tituloP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_tituloPActionPerformed(evt);
+            }
+        });
 
         tf_autorP.setBackground(new java.awt.Color(255, 255, 255));
         tf_autorP.setForeground(new java.awt.Color(0, 0, 0));
@@ -491,6 +515,11 @@ public class Libreria extends javax.swing.JFrame {
         cb_tipoListar.setBackground(new java.awt.Color(204, 204, 204));
         cb_tipoListar.setForeground(new java.awt.Color(0, 0, 0));
         cb_tipoListar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Titulo", "Libro de Texto", "Libro de Referencia", "Libro de Ficcion", "Libro de No Ficcion" }));
+        cb_tipoListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_tipoListarActionPerformed(evt);
+            }
+        });
 
         ta_listarL.setBackground(new java.awt.Color(255, 255, 255));
         ta_listarL.setColumns(20);
@@ -567,10 +596,10 @@ public class Libreria extends javax.swing.JFrame {
         ff_precioEditar.setBackground(new java.awt.Color(255, 255, 255));
         ff_precioEditar.setForeground(new java.awt.Color(0, 0, 0));
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Editar Libros");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_editarLibro.setBackground(new java.awt.Color(204, 204, 204));
+        b_editarLibro.setForeground(new java.awt.Color(0, 0, 0));
+        b_editarLibro.setText("Editar Libros");
+        b_editarLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout p_editarLibrosLayout = new javax.swing.GroupLayout(p_editarLibros);
         p_editarLibros.setLayout(p_editarLibrosLayout);
@@ -609,7 +638,7 @@ public class Libreria extends javax.swing.JFrame {
                         .addContainerGap(215, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_editarLibrosLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)
+                        .addComponent(b_editarLibro)
                         .addContainerGap())))
         );
         p_editarLibrosLayout.setVerticalGroup(
@@ -639,7 +668,7 @@ public class Libreria extends javax.swing.JFrame {
                             .addComponent(jLabel36)
                             .addComponent(ff_precioEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
+                        .addComponent(b_editarLibro)))
                 .addContainerGap())
         );
 
@@ -1044,6 +1073,71 @@ public class Libreria extends javax.swing.JFrame {
         p_adminLog.setVisible(false);
     }//GEN-LAST:event_b_entrarUsuarioActionPerformed
 
+    private void tf_tituloPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_tituloPActionPerformed
+        String titulo = tf_tituloP.getText();
+        if (!titulo.isEmpty()) {
+            Libros libros = new Libros();
+                        
+        }
+    }//GEN-LAST:event_tf_tituloPActionPerformed
+
+    private void b_publicarLibro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_publicarLibro1ActionPerformed
+        String autor = tf_autorP.getText();
+        String titulo = tf_autorP.getText();
+        double precio = Double.parseDouble(ff_precioP.getText());
+        int libroGuard = tp_libroPublicar.getSelectedIndex();
+        
+        switch(libroGuard){
+            case 0:
+                String curso = tf_cursoT.getText();
+                String facultad = tf_facultadT.getText();
+                Texto libroT = new Texto();
+                publicarLibro(libroT);
+
+                break;
+            case 1:
+                String referncias = (String) cb_tipoLRef.getSelectedItem();
+                Referencias libroR = new Referencias();
+                publicarLibro(libroR);
+                break;
+            case 2:
+                String ficcion = (String) cb_tipoLFiccion.getSelectedItem();
+                Referencias libroF = new Referencias();
+                publicarLibro(libroF);
+                break;
+            case 3:
+                String noFiccion = (String) cb_tipoLNoFiccion.getSelectedItem();
+                Referencias libroNF = new Referencias();
+                publicarLibro(libroNF);
+                break;
+        }
+    }//GEN-LAST:event_b_publicarLibro1ActionPerformed
+
+    private void cb_tipoLRefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_tipoLRefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_tipoLRefActionPerformed
+
+    private void cb_tipoListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_tipoListarActionPerformed
+        String tipoSeleccionado = (String) cb_tipoListar.getSelectedItem();
+
+        // Lógica para listar libros según el tipo seleccionado
+        StringBuilder resultado = new StringBuilder();
+
+        for (Libros libros : libro) {
+            // Comprobar el tipo de libro y agregar al resultado
+            if (libros instanceof Texto && tipoSeleccionado.equals("Libro de Texto")) {
+                resultado.append(stringLibro(libros));
+            } else if (libros instanceof Referencias && tipoSeleccionado.equals("Libro de Referencia")) {
+                resultado.append(stringLibro(libros));
+            } else if (libros instanceof Referencias && tipoSeleccionado.equals("Libro de Ficción")) {
+                resultado.append(stringLibro(libros));
+            } else if (libros instanceof Referencias && tipoSeleccionado.equals("Libro de No Ficción")) {
+                resultado.append(stringLibro(libros));
+            }
+        }
+        ta_listarL.setText(resultado.toString());        
+    }//GEN-LAST:event_cb_tipoListarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1086,6 +1180,7 @@ public class Libreria extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_back;
+    private javax.swing.JButton b_editarLibro;
     private javax.swing.JButton b_eliminar;
     private javax.swing.JButton b_entrarUsuario;
     private javax.swing.JButton b_logIn;
@@ -1106,7 +1201,6 @@ public class Libreria extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField ff_precioP;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;

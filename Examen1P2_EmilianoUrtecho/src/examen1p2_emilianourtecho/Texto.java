@@ -2,23 +2,23 @@ package examen1p2_emilianourtecho;
 
 
 public class Texto extends Libros{
-    private int curso;
+    private String curso;
     private String facultad;
 
     public Texto() {
     }
 
-    public Texto(int curso, String facultad, String titulo, String autor, double precio, int edicion) {
+    public Texto(String curso, String facultad, String titulo, String autor, double precio, int edicion) {
         super(titulo, autor, precio, edicion);
         this.curso = curso;
         this.facultad = facultad;
     }
 
-    public int getCurso() {
+    public String getCurso() {
         return curso;
     }
 
-    public void setCurso(int curso) {
+    public void setCurso(String curso) {
         this.curso = curso;
     }
 
@@ -35,6 +35,4 @@ public class Texto extends Libros{
         return "Curso: " + curso + "\n\n"
               +"Facultad: " + facultad;
     }
-    
-    
 }
