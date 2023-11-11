@@ -83,6 +83,8 @@ public class Libreria extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         ta_eliminarL = new javax.swing.JTextArea();
         b_eliminar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
         p_usuarioPagina = new javax.swing.JPanel();
         tb_usuarioPanel = new javax.swing.JTabbedPane();
         p_devolverLibros = new javax.swing.JPanel();
@@ -109,6 +111,8 @@ public class Libreria extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        b_back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -170,6 +174,11 @@ public class Libreria extends javax.swing.JFrame {
                 b_entrarUsuarioMouseExited(evt);
             }
         });
+        b_entrarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_entrarUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_adminLogLayout = new javax.swing.GroupLayout(p_adminLog);
         p_adminLog.setLayout(p_adminLogLayout);
@@ -187,7 +196,7 @@ public class Libreria extends javax.swing.JFrame {
                         .addGroup(p_adminLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tf_userAdministrador)
                             .addComponent(pf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_adminLogLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(p_adminLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +222,7 @@ public class Libreria extends javax.swing.JFrame {
                     .addComponent(pf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(b_logIn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(b_entrarUsuario)
                 .addContainerGap())
         );
@@ -221,6 +230,7 @@ public class Libreria extends javax.swing.JFrame {
         getContentPane().add(p_adminLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 440));
 
         p_adminPagina.setBackground(new java.awt.Color(204, 204, 204));
+        p_adminPagina.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         crudLibros.setBackground(new java.awt.Color(204, 204, 204));
         crudLibros.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -257,7 +267,7 @@ public class Libreria extends javax.swing.JFrame {
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
+                .addContainerGap(349, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel42)
                     .addComponent(jLabel43))
@@ -311,7 +321,7 @@ public class Libreria extends javax.swing.JFrame {
                 .addComponent(jLabel30)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cb_tipoLRef, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(346, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(b_publicarLibro)
@@ -349,7 +359,7 @@ public class Libreria extends javax.swing.JFrame {
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
+                .addContainerGap(346, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                         .addComponent(b_publicarLibro2)
@@ -392,7 +402,7 @@ public class Libreria extends javax.swing.JFrame {
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addContainerGap(437, Short.MAX_VALUE)
+                .addContainerGap(637, Short.MAX_VALUE)
                 .addComponent(b_publicarLibro3)
                 .addContainerGap())
             .addGroup(jPanel15Layout.createSequentialGroup()
@@ -463,7 +473,7 @@ public class Libreria extends javax.swing.JFrame {
                 .addGroup(p_publicarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel40)
                     .addComponent(tf_autorP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(p_publicarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
                     .addComponent(ff_precioP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -497,7 +507,7 @@ public class Libreria extends javax.swing.JFrame {
                 .addComponent(jLabel31)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cb_tipoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(350, Short.MAX_VALUE))
             .addGroup(p_listarLibrosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -511,7 +521,7 @@ public class Libreria extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(cb_tipoListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -596,7 +606,7 @@ public class Libreria extends javax.swing.JFrame {
                                 .addComponent(jLabel36)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ff_precioEditar)))
-                        .addContainerGap(15, Short.MAX_VALUE))
+                        .addContainerGap(215, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_editarLibrosLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3)
@@ -628,7 +638,7 @@ public class Libreria extends javax.swing.JFrame {
                         .addGroup(p_editarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel36)
                             .addComponent(ff_precioEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                         .addComponent(jButton3)))
                 .addContainerGap())
         );
@@ -671,7 +681,7 @@ public class Libreria extends javax.swing.JFrame {
                 .addGroup(p_eliminarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(p_eliminarLibrosLayout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
                         .addComponent(b_eliminar))
                     .addGroup(p_eliminarLibrosLayout.createSequentialGroup()
                         .addComponent(jLabel38)
@@ -699,25 +709,49 @@ public class Libreria extends javax.swing.JFrame {
                             .addComponent(cb_libroEliminarLibros1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         crudLibros.addTab("Eliminar Libros", p_eliminarLibros);
 
-        javax.swing.GroupLayout p_adminPaginaLayout = new javax.swing.GroupLayout(p_adminPagina);
-        p_adminPagina.setLayout(p_adminPaginaLayout);
-        p_adminPaginaLayout.setHorizontalGroup(
-            p_adminPaginaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(crudLibros)
+        p_adminPagina.add(crudLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 56, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setForeground(new java.awt.Color(215, 211, 222));
+
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("back");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton4)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
-        p_adminPaginaLayout.setVerticalGroup(
-            p_adminPaginaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(crudLibros)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jButton4)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
+
+        p_adminPagina.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 60));
 
         getContentPane().add(p_adminPagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 350));
 
         p_usuarioPagina.setBackground(new java.awt.Color(215, 211, 222));
+        p_usuarioPagina.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb_usuarioPanel.setBackground(new java.awt.Color(204, 204, 204));
         tb_usuarioPanel.setForeground(new java.awt.Color(0, 0, 0));
@@ -781,7 +815,7 @@ public class Libreria extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel16))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 174, Short.MAX_VALUE))
                     .addComponent(jScrollPane6))
                 .addContainerGap())
         );
@@ -807,7 +841,7 @@ public class Libreria extends javax.swing.JFrame {
                             .addComponent(jButton2)
                             .addComponent(jLabel28)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_devolverLibrosLayout.createSequentialGroup()
-                        .addContainerGap(14, Short.MAX_VALUE)
+                        .addContainerGap(108, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -873,7 +907,7 @@ public class Libreria extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel22))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 174, Short.MAX_VALUE))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -893,7 +927,7 @@ public class Libreria extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(jLabel22)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(p_comprarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
@@ -906,18 +940,38 @@ public class Libreria extends javax.swing.JFrame {
 
         tb_usuarioPanel.addTab("Devolver Libro", p_comprarLibros);
 
-        javax.swing.GroupLayout p_usuarioPaginaLayout = new javax.swing.GroupLayout(p_usuarioPagina);
-        p_usuarioPagina.setLayout(p_usuarioPaginaLayout);
-        p_usuarioPaginaLayout.setHorizontalGroup(
-            p_usuarioPaginaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tb_usuarioPanel, javax.swing.GroupLayout.Alignment.TRAILING)
+        p_usuarioPagina.add(tb_usuarioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 41, 750, 410));
+
+        jPanel1.setBackground(new java.awt.Color(215, 211, 222));
+
+        b_back.setBackground(new java.awt.Color(215, 211, 222));
+        b_back.setForeground(new java.awt.Color(0, 0, 0));
+        b_back.setText("back");
+        b_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_backActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(b_back)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
-        p_usuarioPaginaLayout.setVerticalGroup(
-            p_usuarioPaginaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_usuarioPaginaLayout.createSequentialGroup()
-                .addGap(0, 34, Short.MAX_VALUE)
-                .addComponent(tb_usuarioPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(b_back)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
+
+        p_usuarioPagina.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(p_usuarioPagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 350));
 
@@ -963,11 +1017,32 @@ public class Libreria extends javax.swing.JFrame {
         }else if(pf_password.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Porfavor llene la casilla del password");
         }else if(tf_userAdministrador.getText().contains("lib123") && pf_password.getText().contains("321lib")){
-            crudLibros.setSelectedIndex(0);
+            p_adminPagina.setVisible(true);
+            p_adminLog.setVisible(false);
+            p_usuarioPagina.setVisible(false);
+            
         }else{
             JOptionPane.showConfirmDialog(null, "Nombre de usario o password incorrectas");
         }
     }//GEN-LAST:event_b_logInActionPerformed
+
+    private void b_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_backActionPerformed
+        p_usuarioPagina.setVisible(false);
+        p_adminPagina.setVisible(false);
+        p_adminLog.setVisible(true);
+    }//GEN-LAST:event_b_backActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        p_usuarioPagina.setVisible(false);
+        p_adminPagina.setVisible(false);
+        p_adminLog.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void b_entrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_entrarUsuarioActionPerformed
+        p_usuarioPagina.setVisible(true);
+        p_adminPagina.setVisible(false);
+        p_adminLog.setVisible(false);
+    }//GEN-LAST:event_b_entrarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1010,6 +1085,7 @@ public class Libreria extends javax.swing.JFrame {
     ArrayList<Referencias> referncia = new ArrayList();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b_back;
     private javax.swing.JButton b_eliminar;
     private javax.swing.JButton b_entrarUsuario;
     private javax.swing.JButton b_logIn;
@@ -1031,6 +1107,7 @@ public class Libreria extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1065,10 +1142,12 @@ public class Libreria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
